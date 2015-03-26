@@ -5,9 +5,13 @@ define('DS', DIRECTORY_SEPARATOR);
 define('WWW_ROOT', __DIR__ . DS);
 
 $routes = array(
+    'home' => array(
+        'controller' => 'Goochelen',
+        'action' => 'index'
+    ),
     'welcome' => array(
     	'controller' => 'Goochelen',
-    	'action' => 'index'
+    	'action' => 'welcome'
 	),
     'login' => array(
         'controller' => 'Users',
@@ -17,10 +21,14 @@ $routes = array(
         'controller' => 'Users',
         'action' => 'register'
     ),
+    'logout' => array(
+        'controller' => 'Users',
+        'action' => 'logout'
+    ),
 );
 
 if(empty($_GET['page'])) {
-    $_GET['page'] = 'welcome';
+    $_GET['page'] = 'home';
 }
 if(empty($routes[$_GET['page']])) {
     header('Location: index.php');

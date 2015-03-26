@@ -15,9 +15,20 @@ private $userDAO;
 
 	public function index() {
 
-		if (!empty($_SESSION["user"])) {
-			header('Location: index.php?page=welcome');
-		}
+		// if(empty($_SESSION['user'])) {
+		// 	header('Location: index.php?page=welcome');
+		// }else{
+		// 	$this->trace("logged in");
+		// }
+	}
+
+	public function welcome() {
+
+	}
+
+	public function home(){
+
+
 
 	}
 

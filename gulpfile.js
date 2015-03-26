@@ -1,37 +1,18 @@
 var gulp = require('gulp'),
-		browserify = require('browserify'),
-		buffer = require('gulp-buffer'),
-		gutil = require('gulp-util'),
-		jshint = require('gulp-jshint'),
-		source = require('vinyl-source-stream'),
-		sourcemaps = require('gulp-sourcemaps'),
-		stylish = require('jshint-stylish'),
-		uglify = require('gulp-uglify'),
-		compass = require('gulp-compass'),
-		bower = require('gulp-bower');
-
-gulp.task('bower', function() {
-  return bower()
-});
+	browserify = require('browserify'),
+	buffer = require('gulp-buffer'),
+	source = require('vinyl-source-stream'),
+	sourcemaps = require('gulp-sourcemaps'),
+	gutil = require('gulp-util'),
+	jshint = require('gulp-jshint'),
+	uglify = require('gulp-uglify');
+	compass = require('gulp-compass');
 
 gulp.task('lint', function(){
 	return gulp.src('js/src/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish));
 });
-
-//compass map aanpassen
-
-gulp.task('compass', function() {
-  gulp.src('_scss/src/*.scss')
-    .pipe(compass({
-      config_file: 'config.rb',
-      css: 'css',
-      sass: '_scss'
-    }))
-    .pipe(gulp.dest('app/assets/temp'));
-});
-
 
 gulp.task('scripts', function(){
 	var bundler = browserify({
@@ -55,7 +36,18 @@ gulp.task('scripts', function(){
 		.pipe(gulp.dest('./js'));
 });
 
-gulp.task('watch', ['scripts'], ['bower'], function(){
-	gulp.watch(['_js/**/*.js','_hbs/**/*.hbs'], ['scripts']);
-	gulp.watch('./_scss/src/*.scss', ['compass']);
+gulp.task('compass', function() {
+  gulp.src('_scss/src/*.scss')
+    .pipe(compass({
+      config_file: 'config.rb',
+      css: 'css',
+      sass: '_scss'
+    }))
+    .pipe(gulp.dest('app/assets/temp'));
 });
+
+gulp.task('watch', function (){
+	var watcher = gulp.watch(['_js/**/*.js','_hbs/**/*.hbs'], ['scripts']);
+		gulp.watch('./_scss/src/*.scss', ['compass']);
+});
+

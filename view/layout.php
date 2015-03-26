@@ -5,8 +5,9 @@
 	<meta name="author" content="Gilles Van Den Ven + Matthias Brodelet">
     <meta name="description" content="Komen_Goochelen">
     <meta name="keywords" content="devine Major IV">
-    <link href="css/screen.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="scripts/modernizr.custom.92176.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,800italic,300,400' rel='stylesheet' type='text/css'>
+    <link href="css/src/screen.css" rel="stylesheet" type="text/css"/>
 	<title>Komen_Goochelen - Major IV</title>
 
 </head>
@@ -25,8 +26,6 @@
 
 <?php echo $content; ?>
 
-<script src="bower_components/bean/bean.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="js/script.dist.js"></script>
+
 </body>
 </html>

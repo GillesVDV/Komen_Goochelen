@@ -12,13 +12,19 @@ class UsersController extends Controller {
 		$this->userDAO = new UserDAO();
 	}
 
-	public function loginregister() {
+	public function login() {
 		if(!empty($_POST['action'])) {
 			if($_POST['action'] == 'Login') {
 				$this->_handleLogin();
-			} else if($_POST['action'] == 'Register') {
+			} 
+		}
+	}
+
+	public function register(){
+		if(!empty($_POST['action'])) {
+			if($_POST['action'] == 'Register') {
 				$this->_handleRegister();
-			}
+			} 
 		}
 	}
 
@@ -36,7 +42,7 @@ class UsersController extends Controller {
 				$hasher = new \Phpass\Hash;
 				if ($hasher->checkPassword($_POST['loginPassword'], $existing['password'])) {
 					$_SESSION['user'] = $existing;
-					$this->redirect('index.php');
+					$this->redirect('index.php#overview');
 				} else {
 					$_SESSION['error'] = 'Unknown username / password';
 				}
@@ -83,7 +89,7 @@ class UsersController extends Controller {
 
 	public function logout(){
 		unset($_SESSION['user']);
-		$this->redirect('index.php');
+		$this->redirect('index.php?page=welcome');
 	}
 
 }

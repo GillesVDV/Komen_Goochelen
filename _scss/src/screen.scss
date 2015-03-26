@@ -1,0 +1,38 @@
+@import 'base';
+
+
+html {
+	font-size: 62.5%;
+}
+
+body{
+
+	color: #000000;
+	background-color: #e3e3e3;
+	font-family: helvetica, arial, sans-serif;
+	font-size:1.6em;
+	line-height:1.9em;
+
+}
+
+.welcomescreen{
+	background: url('../../img/welkom.jpg');
+	width:640px;
+	height:1046px;
+}
+
+.infowelkom{
+	font-family: bookman oldstyle;
+	font-weight: 700;
+	color:white;
+	text-align:center;
+	width:400px;
+	margin: 0 auto;
+	padding-top:600px;
+	font-size:1.5em;
+}
+
+.inschrijven{
+	color:white;
+
+}
