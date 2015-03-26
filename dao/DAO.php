@@ -2,9 +2,9 @@
 class DAO {
 
 	private static $dbHost = "localhost";
-	private static $dbName = "komengoochelen";
-	private static $dbUser = "dynamo";
-	private static $dbPass = "dynamodegoochelaar";
+	private static $dbName = "komen_goochelen";
+	private static $dbUser = "root";
+	private static $dbPass = "root";
 
 	private static $sharedPDO;
 
