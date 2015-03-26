@@ -1,0 +1,21 @@
+{
+  "name": "WhiteBoard copy",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "Gilles van de ven"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "malihu-custom-scrollbar-plugin": "~3.0.6",
+    "bean": "~1.0.14",
+    "jquery": "~2.1.1"
+  }
+}

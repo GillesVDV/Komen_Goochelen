@@ -6,13 +6,32 @@ var gulp = require('gulp'),
 		source = require('vinyl-source-stream'),
 		sourcemaps = require('gulp-sourcemaps'),
 		stylish = require('jshint-stylish'),
-		uglify = require('gulp-uglify');
+		uglify = require('gulp-uglify'),
+		compass = require('gulp-compass'),
+		bower = require('gulp-bower');
+
+gulp.task('bower', function() {
+  return bower()
+});
 
 gulp.task('lint', function(){
 	return gulp.src('js/src/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish));
 });
+
+//compass map aanpassen
+
+gulp.task('compass', function() {
+  gulp.src('_scss/src/*.scss')
+    .pipe(compass({
+      config_file: 'config.rb',
+      css: 'css',
+      sass: '_scss'
+    }))
+    .pipe(gulp.dest('app/assets/temp'));
+});
+
 
 gulp.task('scripts', function(){
 	var bundler = browserify({
@@ -36,6 +55,7 @@ gulp.task('scripts', function(){
 		.pipe(gulp.dest('./js'));
 });
 
-gulp.task('watch', ['scripts'], function(){
+gulp.task('watch', ['scripts'], ['bower'], function(){
 	gulp.watch(['_js/**/*.js','_hbs/**/*.hbs'], ['scripts']);
+	gulp.watch('./_scss/src/*.scss', ['compass']);
 });
