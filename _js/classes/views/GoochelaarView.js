@@ -3,7 +3,9 @@ var template = require('../../../_hbs/goochelaar.hbs');
 var GoochelaarView = Backbone.View.extend({
 
 	template: template,
-	tagName: 'tr',
+	tagName: 'div',
+	className: 'goochelaar',
+
 
 	events: {
 		'click .delete': 'clickDelete',

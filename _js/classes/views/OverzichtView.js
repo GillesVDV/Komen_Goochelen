@@ -21,6 +21,11 @@ var Overzichtiew = Backbone.View.extend({
 
 		console.log(this.collection);
 
+
+		$.get('index.php?page=session', function ( data ) {
+		    console.log( "dit is de current session"+ data.email);
+		});
+
 	},
 
 	renderGoochelaars: function(){

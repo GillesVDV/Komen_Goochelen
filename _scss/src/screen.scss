@@ -21,6 +21,48 @@ body{
 	height:1046px;
 }
 
+.goochelaars{
+	background: url('../../img/overviewback.jpg');
+	width:640px;
+	height:1046px;
+}
+
+.goochelaar{
+	width:300px;
+	height:414px;
+	background: rgba(44,47,55,0.5);
+	float:left;
+	margin-right:10px;
+}
+
+.maandag{
+	width:300px;
+	height:414px;
+	background: url('../../img/maandagback.png');
+	position: absolute;
+}
+
+.dinsdag{
+	width:300px;
+	height:414px;
+	background: url('../../img/dinsdagback.png');
+	position: absolute;
+}
+
+.woensdag{
+	width:300px;
+	height:414px;
+	background: url('../../img/woensdagback.png');
+	position: absolute;
+}
+
+.donderdag{
+	width:300px;
+	height:414px;
+	background: url('../../img/donderdagback.png');
+	position: absolute;
+}
+
 .infowelkom{
 	font-family: bookman oldstyle;
 	font-weight: 700;
@@ -34,5 +76,8 @@ body{
 
 .inschrijven{
 	color:white;
+}
 
+.hidden{
+	display:none;
 }

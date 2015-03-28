@@ -1,4 +1,4 @@
-<form method="post" action="" id="registerForm" autocomplete="off" class="form">
+<form method="post" action="" id="registerForm" autocomplete="off" class="form" enctype="multipart/form-data">
 	<fieldset>
 		<legend>Register</legend>
 		<div class="cols-2">
@@ -22,6 +22,14 @@
                 if(!empty($errors['registerPassword2'])) echo $errors['registerPassword2'];
                 ?></span>
 		</div>
+
+		<fieldset>
+
+				<label for="image" class="label">Image</label><br/>
+				<input type="file" name="image" class="imgupload" value="" required class="addvideo">
+
+			</fieldset>
+
 		<div>
 			<input class="submit-btn" type="submit" name="action" value="Register" />
 		</div>

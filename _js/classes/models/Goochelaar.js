@@ -2,7 +2,8 @@ var Goochelaar = Backbone.Model.extend({
 
 	defaults: {
 		"artiestennaam": "",
-		"email": ""
+		"email": "",
+		"dag": ""
 	},
 
 	urlRoot: 'api/overzicht',

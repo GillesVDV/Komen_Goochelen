@@ -25,6 +25,22 @@ $routes = array(
         'controller' => 'Users',
         'action' => 'logout'
     ),
+    'session' => array(
+        'controller' => 'Goochelen',
+        'action' => 'session'
+    ), 
+    'scoreeen' => array(
+        'controller' => 'Goochelen',
+        'action' => 'scoreeen'
+    ), 
+    'scoretwee' => array(
+        'controller' => 'Goochelen',
+        'action' => 'scoretwee'
+    ), 
+    'scoredrie' => array(
+        'controller' => 'Goochelen',
+        'action' => 'scoredrie'
+    ), 
 );
 
 if(empty($_GET['page'])) {

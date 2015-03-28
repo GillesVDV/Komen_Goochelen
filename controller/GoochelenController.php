@@ -28,8 +28,78 @@ private $userDAO;
 
 	public function home(){
 
+	}
 
+	public function session(){
 
+		$session = $_SESSION['user'];
+
+		header('Content-Type: application/json');
+	    echo json_encode($session);
+	    die();
+	}
+
+	public function scoreeen(){
+
+		$data = $_POST;
+
+		if($data){
+
+			$scoreeen= $this->goochelenDAO->introscore($data);
+		  	
+			if(!$scoreeen){
+
+			}else{
+        
+				$confirm = true;
+	        
+	        header('Content-Type: application/json');
+	        echo json_encode(array('result' => true));
+	        die();
+				}
+	  	}
+	}
+
+	public function scoretwee(){
+
+		$data = $_POST;
+
+		if($data){
+
+			$scoreeen= $this->goochelenDAO->tweescore($data);
+		  	
+			if(!$scoreeen){
+
+			}else{
+        
+				$confirm = true;
+	        
+	        header('Content-Type: application/json');
+	        echo json_encode(array('result' => true));
+	        die();
+				}
+	  	}
+	}
+
+	public function scoredrie(){
+
+		$data = $_POST;
+
+		if($data){
+
+			$scoreeen= $this->goochelenDAO->driescore($data);
+		  	
+			if(!$scoreeen){
+
+			}else{
+        
+				$confirm = true;
+	        
+	        header('Content-Type: application/json');
+	        echo json_encode(array('result' => true));
+	        die();
+				}
+	  	}
 	}
 
 }

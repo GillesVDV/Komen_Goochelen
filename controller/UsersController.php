@@ -3,6 +3,7 @@
 require_once WWW_ROOT . 'controller' . DS . 'Controller.php';
 require_once WWW_ROOT . 'dao' . DS . 'UserDAO.php';
 require_once WWW_ROOT . 'phpass' . DS . 'Phpass.php';
+require_once WWW_ROOT . 'php-image-resize' . DS . 'ImageResize.php';
 
 class UsersController extends Controller {
 
@@ -71,16 +72,41 @@ class UsersController extends Controller {
 		if($_POST['registerPassword2'] != $_POST['registerPassword']) {
 			$errors['registerPassword2'] = 'Passwords do not match';
 		}
+
+		if (!empty($_FILES['image']['error'])) {
+			$errors['image'] = "Profielfoto kon niet worden toegevoegd";
+		}
+
+		if (empty($errors['image'])) {
+			$size = getimagesize($_FILES['image']['tmp_name']);
+			if (empty($size)) {
+				$errors['image'] = "Profielfoto kon niet worden toegevoegd";
+			}
+		}
+
 		if(empty($errors)) {
+
+			$name = preg_replace("/\\.[^.\\s]{3,4}$/", "", $_FILES["image"]["name"]);
+			$extension = explode($name.".", $_FILES["image"]["name"])[1];
+
+			$imageresize = new Eventviva\ImageResize($_FILES['image']['tmp_name']);
+			$imageresize->save(WWW_ROOT."uploads/images".DS.$name.".".$extension);
+
+			move_uploaded_file($_FILES['image']["tmp_name"], WWW_ROOT."uploads/images".DS.$_FILES["image"]["name"]);
+
+
 			$hasher = new \Phpass\Hash;
 			$inserteduser = $this->userDAO->insert(array(
 				'email' => $_POST['registerEmail'],
-				'password' => $hasher->hashPassword($_POST['registerPassword'])
+				'password' => $hasher->hashPassword($_POST['registerPassword']),
+				'photo'=>$name,
+				'extension'=>$extension
 			));
+
 			if(!empty($inserteduser)) {
 				$_SESSION['info'] = 'Registration Successful!';
 				$_SESSION['user'] = $inserteduser;
-				$this->redirect('index.php');
+				$this->redirect('index.php#overview');
 			}
 		}
 		$_SESSION['error'] = 'Registration Failed!';
@@ -91,5 +117,6 @@ class UsersController extends Controller {
 		unset($_SESSION['user']);
 		$this->redirect('index.php?page=welcome');
 	}
+
 
 }
