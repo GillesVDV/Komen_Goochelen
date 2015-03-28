@@ -1,11 +1,25 @@
 
-
-
 <div class="{{dag}}">
 
-	<a href="#profiel/{{id}}">{{email}}</a>
-	<p>{{dag}}</p>
+	<div class="goochelcont">
 
-	<a href="#beoordelen/{{id}}">beoordelen</a>
+		<a href="#profiel/{{id}}">
+			<div class="fotomask">
+				<img class="img" src="uploads/images/{{photo}}.{{extension}}" alt="{{photo}}" />
+			</div>
+		</a>
+
+		<div class="center">
+			<a class="profielbtn" href="#profiel/{{id}}">{{email}}</a>
+		</div>
+
+		<p class="kalendericon">{{dag}}</p>
+		<p class="plaatsicon">{{plaats}}</p>
+
+		<div class="center">
+		<a class="btn" href="#beoordelen/{{id}}">score geven</a>
+		</div>
+
+	</div>
 
 </div>

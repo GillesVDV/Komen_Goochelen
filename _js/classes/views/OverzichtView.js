@@ -1,17 +1,16 @@
 var GoochelaarCollection = require('../collections/GoochelaarCollection.js');
 var GoochelaarView = require('./GoochelaarView.js');
 
+var Baseview = require('./Baseview.js');
 var template = require('../../../_hbs/overview.hbs');
 
-var Overzichtiew = Backbone.View.extend({
+var Overzichtiew = Baseview.extend({
 
 	template: template,
 	tagName: 'div',
 	className: 'overview',
 
-	events: {
-		
-	},
+
 
 	initialize: function(){
 
@@ -19,11 +18,8 @@ var Overzichtiew = Backbone.View.extend({
 		this.listenTo(this.collection, 'sync', this.renderGoochelaars);
 		this.collection.fetch();
 
-		console.log(this.collection);
-
-
 		$.get('index.php?page=session', function ( data ) {
-		    console.log( "dit is de current session"+ data.email);
+
 		});
 
 	},
@@ -38,9 +34,7 @@ var Overzichtiew = Backbone.View.extend({
 		var view = new GoochelaarView({
 			model: model
 		});
-
 		this.$goochelaars.append(view.render().el);
-		
 	},
 
 
@@ -48,10 +42,12 @@ var Overzichtiew = Backbone.View.extend({
 
 		this.$el.html(this.template());
 		this.$goochelaars = this.$el.find('.goochelaars');
-
 		return this;
 
-	}
+	},
+
+	
+
 
 });
 

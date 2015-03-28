@@ -1,9 +1,10 @@
 var template = require('../../../_hbs/profiel.hbs');
 var Goochelaar = require('../models/Goochelaar.js');
 var GoochelaarCollection = require('../collections/GoochelaarCollection.js');
+var Baseview = require('./Baseview.js');
 //var FeedbackItemView = require('./FeedbackItemView.js');
 
-var ProfielView = Backbone.View.extend({
+var ProfielView = Baseview.extend({
 
 	template: template,
 	tagName: 'section',
@@ -14,6 +15,8 @@ var ProfielView = Backbone.View.extend({
 	},
 
 	initialize: function(options){
+
+		_.extend(this.events, Baseview.prototype.events);
 
 		if(options && options.id){
 

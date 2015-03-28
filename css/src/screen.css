@@ -61,9 +61,35 @@ html {
 body {
   color: #000000;
   background-color: #e3e3e3;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 1.6em;
+  font-family: helvetica Neue, arial, sans-serif;
+  font-size: 2.2em;
   line-height: 1.9em;
+}
+
+.btn {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border: 3px solid #DEAE67;
+  color: #DEAE67;
+  text-decoration: none;
+}
+
+.container {
+  margin-left: 0;
+  -moz-transition-property: margin-left;
+  -o-transition-property: margin-left;
+  -webkit-transition-property: margin-left;
+  transition-property: margin-left;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
 }
 
 .welcomescreen {
@@ -72,10 +98,76 @@ body {
   height: 1046px;
 }
 
-.goochelaars {
+.goochelaarsback {
   background: url("../../img/overviewback.jpg");
   width: 640px;
-  height: 1046px;
+  height: 1136px;
+}
+.goochelaarsback h1 {
+  font-family: lobster;
+  color: white;
+  padding-top: 50px;
+  font-size: 2em;
+}
+
+.verder {
+  border: 3px solid #E1AD59;
+  color: #E1AD59;
+  font-size: 2em;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 100px;
+}
+
+.verder1 {
+  border: 3px solid #E1AD59;
+  color: #E1AD59;
+  font-size: 2em;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 100px;
+}
+
+.klaar {
+  border: 3px solid #E1AD59;
+  color: #E1AD59;
+  font-size: 2em;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 100px;
+}
+
+.scoreback {
+  background: url("../../img/backscores.jpg");
+  width: 640px;
+  height: 1136px;
+}
+.scoreback h1 {
+  font-family: lobster;
+  color: white;
+  padding-top: 50px;
+  font-size: 2em;
+}
+.scoreback h2 {
+  font-family: Droid serif;
+  font-style: italic;
+  color: white;
+  background: url("../../img/bullet.png") left, url("../../img/bullet1.png") right;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.goochelaars {
+  padding-top: 70px;
+  margin-left: 15px;
 }
 
 .goochelaar {
@@ -84,6 +176,181 @@ body {
   background: rgba(44, 47, 55, 0.5);
   float: left;
   margin-right: 10px;
+}
+
+.slidecont {
+  position: absolute;
+  margin-left: 280px;
+}
+
+.menucont {
+  margin-top: 69px;
+}
+
+.menu {
+  width: 280px;
+  height: 1136px;
+  background: #15232C;
+  position: absolute;
+  -moz-transition-property: margin-left;
+  -o-transition-property: margin-left;
+  -webkit-transition-property: margin-left;
+  transition-property: margin-left;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.profielbtn {
+  color: white;
+  font-family: Droid Serif;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.center {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.centerverder {
+  margin-top: 150px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.centerh2 {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.centermenu {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.kalendericon {
+  background: url("../../img/kalendericon.png") center left;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: white;
+}
+
+.plaatsicon {
+  background: url("../../img/plaatsicon.png") center left;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.profielicon {
+  background: url("../../img/profielicon.png") center left;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.galerijicon {
+  background: url("../../img/galerijicon.png") center left;
+  background-repeat: no-repeat;
+  padding-left: 35px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.goochelcont {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.fotomask {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 60px / 60px;
+  -webkit-border-radius: 60px 60px;
+  border-radius: 60px / 60px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.fotomaskgroot {
+  width: 150px;
+  height: 150px;
+  -moz-border-radius: 80px / 80px;
+  -webkit-border-radius: 80px 80px;
+  border-radius: 80px / 80px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.imggroot {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.menulink {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  line-height: 60px;
+  color: white;
+  text-decoration: none;
+}
+
+.overzichticon {
+  background: url("../../img/kalendericon.png") left center no-repeat;
+}
+
+.infoicon {
+  background: url("../../img/infoicon.png") left center no-repeat;
+}
+
+.folded {
+  margin-left: -280px;
+}
+
+.menubtn {
+  width: 56px;
+  height: 56px;
+  background: url("../../img/menuicon.png") no-repeat;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.menuclose {
+  width: 56px;
+  height: 56px;
+  background: url("../../img/menuicon.png") no-repeat;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 .maandag {
@@ -123,6 +390,59 @@ body {
   margin: 0 auto;
   padding-top: 600px;
   font-size: 1.5em;
+}
+
+.scorekaart {
+  background: url("../../img/scorekaart.jpg") no-repeat;
+  width: 393px;
+  height: 543px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.scorekaart p {
+  color: #E1AD59;
+  font-family: lobster;
+  font-size: 5em;
+  text-align: center;
+  padding-top: 250px;
+}
+.scorekaart .top {
+  color: #2F3C4D;
+  font-family: lobster;
+  font-size: 2em;
+  margin-top: -280px;
+  margin-left: 350px;
+  position: absolute;
+}
+.scorekaart .bottom {
+  color: #2F3C4D;
+  font-family: lobster;
+  font-size: 2em;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 18px;
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.scoredown {
+  background: url("../../img/scoredown.png") no-repeat;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  margin-top: -300px;
+  margin-left: 20px;
+}
+
+.scoreup {
+  background: url("../../img/scoreup.png") no-repeat;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  margin-top: -300px;
+  margin-left: 540px;
 }
 
 .inschrijven {

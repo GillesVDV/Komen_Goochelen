@@ -11,6 +11,7 @@ var Application = Backbone.Router.extend({
 		"*actions": "default"
 	},
 
+
 	empty: function(){
 		$('.container').empty();
 	},
@@ -39,8 +40,9 @@ var Application = Backbone.Router.extend({
 			id: id
 		});
 		$('.container').append(this.beoordelen.render().el); 
-	}
+	},
 
+	
 
 
 });
