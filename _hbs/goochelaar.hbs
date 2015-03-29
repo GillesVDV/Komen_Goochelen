@@ -15,10 +15,12 @@
 
 		<p class="kalendericon">{{dag}}</p>
 		<p class="plaatsicon">{{plaats}}</p>
-
-		<div class="center">
-		<a class="btn" href="#beoordelen/{{id}}">score geven</a>
-		</div>
+		<p>{{currentdag}}</p>
+		{{#if currentdag.dag}}
+			<div class="center">
+			<a class="btn" href="#beoordelen/{{id}}">score geven</a>
+			</div>
+		{{/if}}
 
 	</div>
 

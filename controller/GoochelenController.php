@@ -27,6 +27,17 @@ private $userDAO;
 
 	}
 
+	public function cmssettings(){
+
+		$cmssettings= $this->goochelenDAO->getcms();
+
+		header('Content-Type: application/json');
+	    echo json_encode($cmssettings);
+	    die();
+	}
+
+	
+
 	public function session(){
 
 		$session = $_SESSION['user'];
@@ -97,6 +108,52 @@ private $userDAO;
 	        die();
 				}
 	  	}
+	}
+
+	public function uploadimg(){
+
+		$this->trace('[GoochelenController]');
+  		$data = $_POST;
+  			
+		$name = preg_replace("/\\.[^.\\s]{3,4}$/", "", $_FILES["image"]["name"]);
+		$extension = explode($name.".", $_FILES["image"]["name"])[1];
+
+		$imageresize = new Eventviva\ImageResize($_FILES['image']['tmp_name']);
+		$imageresize->save(WWW_ROOT."uploads/images".DS.$name.".".$extension);
+
+		move_uploaded_file($_FILES['image']["tmp_name"], WWW_ROOT."uploads/images".DS.$_FILES["image"]["name"]);
+		$image = $this->goochelenDAO->insertimage(array(
+			"photo"=>$name,
+			"extension"=>$extension
+		));
+
+  	}
+
+  	private function _handleLogin() {
+		$errors = array();
+		if(empty($_POST['loginEmail'])) {
+			$errors['loginEmail'] = 'Please enter your email';
+		}
+		if(empty($_POST['loginPassword'])) {
+			$errors['loginPassword'] = 'Please enter your password';
+		}
+		if(empty($errors)) {
+			$existing = $this->userDAO->selectByEmail($_POST['loginEmail']);
+			if(!empty($existing)) {
+				$hasher = new \Phpass\Hash;
+				if ($hasher->checkPassword($_POST['loginPassword'], $existing['password'])) {
+					$_SESSION['user'] = $existing;
+					$this->redirect('index.php?page=cmss');
+				} else {
+					$_SESSION['error'] = 'Unknown username / password';
+				}
+			} else {
+				$_SESSION['error'] = 'Unknown username / password';
+			}
+		} else {
+			$_SESSION['error'] = 'Unknown username / password';
+		}
+		$this->set('errors', $errors);
 	}
 
 }

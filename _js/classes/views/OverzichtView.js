@@ -3,14 +3,14 @@ var GoochelaarView = require('./GoochelaarView.js');
 
 var Baseview = require('./Baseview.js');
 var template = require('../../../_hbs/overview.hbs');
+var currentdag;
+var eindeweek;
 
 var Overzichtiew = Baseview.extend({
 
 	template: template,
 	tagName: 'div',
 	className: 'overview',
-
-
 
 	initialize: function(){
 
@@ -20,6 +20,12 @@ var Overzichtiew = Baseview.extend({
 
 		$.get('index.php?page=session', function ( data ) {
 
+		});
+
+		$.get('index.php?page=cmssettings', function ( data ) {
+		    currentdag = data[0].currentdag;
+		    eindeweek = data[0].eindeweek;
+		    console.log(currentdag + "" + eindeweek);
 		});
 
 	},

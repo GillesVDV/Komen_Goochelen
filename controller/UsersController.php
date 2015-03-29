@@ -13,6 +13,29 @@ class UsersController extends Controller {
 		$this->userDAO = new UserDAO();
 	}
 
+	public function cms(){
+
+		if(!empty($_POST['action'])) {
+			if($_POST['action'] == 'Login') {
+				$this->_handleLoginCMS();
+			} 
+		}
+
+	}
+
+	public function cmss(){
+
+		if(!empty($_POST['action'])) {
+			if($_POST['action'] == 'submit') {
+				$cmssetting = $this->userDAO->insertcms(array(
+				'dag' => $_POST['dag'],
+				'week' => $_POST['week']
+			));
+			} 
+		}
+
+	}
+
 	public function login() {
 		if(!empty($_POST['action'])) {
 			if($_POST['action'] == 'Login') {
@@ -27,6 +50,33 @@ class UsersController extends Controller {
 				$this->_handleRegister();
 			} 
 		}
+	}
+
+	private function _handleLoginCMS() {
+		$errors = array();
+		if(empty($_POST['loginEmail'])) {
+			$errors['loginEmail'] = 'Please enter your email';
+		}
+		if(empty($_POST['loginPassword'])) {
+			$errors['loginPassword'] = 'Please enter your password';
+		}
+		if(empty($errors)) {
+			$existing = $this->userDAO->selectByEmailCMS($_POST['loginEmail']);
+			if(!empty($existing)) {
+				$hasher = new \Phpass\Hash;
+				if ($hasher->checkPassword($_POST['loginPassword'], $existing['password'])) {
+					$_SESSION['user'] = $existing;
+					$this->redirect('index.php?page=cmss');
+				} else {
+					$_SESSION['error'] = 'Unknown username / password';
+				}
+			} else {
+				$_SESSION['error'] = 'Unknown username / password';
+			}
+		} else {
+			$_SESSION['error'] = 'Unknown username / password';
+		}
+		$this->set('errors', $errors);
 	}
 
 	private function _handleLogin() {

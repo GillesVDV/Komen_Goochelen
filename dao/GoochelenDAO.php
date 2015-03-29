@@ -3,6 +3,22 @@ require_once __DIR__ . '/DAO.php';
 class GoochelenDAO extends DAO {
 
 
+    public function selectAll() {
+    $sql = "SELECT * 
+                    FROM `komen_pictures`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }   
+
+  public function getcms() {
+    $sql = "SELECT * 
+                    FROM `komen_cms`";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }   
+
 	public function introscore($data) {
 
 			$sql = "INSERT INTO `komen_score` (`user_id`, `intro_trick`, `beoordeler_id`) VALUES (:userid,:score ,:beoordelerid)";
@@ -44,6 +60,18 @@ class GoochelenDAO extends DAO {
         
         }
         return array();
+    }
+
+    public function insertimage($data) {
+            $sql = "INSERT INTO `komen_pictures` (`picture`, `extension`) VALUES (:photo, :extension)";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(':photo', $data["photo"]);
+            $stmt->bindValue(':extension', $data["extension"]);          
+            if($stmt->execute()) {
+                
+            }
+        
+        return false;
     }
 
 

@@ -5,6 +5,8 @@ var GoochelaarCollection = require('../collections/GoochelaarCollection.js');
 var beoordeler_id;
 var user_id;
 var teller = 0;
+var scorekaart = document.querySelector('.scorekaart');
+
 
 var BeoordeelView = Baseview.extend({
 
@@ -87,7 +89,6 @@ var BeoordeelView = Baseview.extend({
 		if(teller <= 0){
 			var scoredown = document.querySelector('.scoredown').style.display='none';
 		}
-		
 	},
 
 	clickAdd: function(e){
@@ -110,13 +111,27 @@ var BeoordeelView = Baseview.extend({
 			var getal = document.querySelector('.scorekaart p');
 			var top = document.querySelector('.top');
 			var bottom = document.querySelector('.bottom');
+			
 			getal.innerHTML = 0;
 			top.innerHTML = 0;
 			bottom.innerHTML = 0;
 			teller = 0;
 	    	
+	    	var scorekaart = document.querySelector('.scorekaart');
+	    	scorekaart.classList.remove("schoppen");
+	    	scorekaart.classList.add("ruiten");
+
+	    	scorekaart.style.opacity = 0;
+	    	$( ".scorekaart" ).animate({
+			opacity: 1,
+
+			}, 1000, function() {
+
+			});
+
 			intro.classList.add("hidden");
 			main.classList.remove("hidden");
+
 			introb.classList.add("hidden");
 			mainb.classList.remove("hidden");
 		});
@@ -145,13 +160,24 @@ var BeoordeelView = Baseview.extend({
 			getal.innerHTML = 0;
 			top.innerHTML = 0;
 			bottom.innerHTML = 0;
+
+			var scorekaart = document.querySelector('.scorekaart');
+			scorekaart.classList.remove("ruiten");
+	    	scorekaart.classList.add("klaveren");
+
+	    	scorekaart.style.opacity = 0;
+	    	$( ".scorekaart" ).animate({
+			opacity: 1,
+
+			}, 1000, function() {
+
+			});
 	    	
 	    	teller = 0;
 			main.classList.add("hidden");
 			finale.classList.remove("hidden");
 			mainb.classList.add("hidden");
 			finaleb.classList.remove("hidden");
-
 
 		});
 	},

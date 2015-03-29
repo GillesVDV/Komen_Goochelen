@@ -12,6 +12,19 @@ class UserDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }   
 
+	public function insertcms($data){
+	    $sql = 'UPDATE komen_cms
+	                SET currentdag = :dag, eindeweek = :week';
+	    $stmt = $this->pdo->prepare($sql);
+	    $stmt->bindValue(':dag', $data['dag']);
+	    $stmt->bindValue(':week', $data['week']);
+
+	    if($stmt->execute()){
+	    
+	    }
+	    return array();
+	}
+
 
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
@@ -54,6 +67,20 @@ class UserDAO extends DAO {
 		}
 		return [];
 	}
+
+	public function selectByEmailCMS($email) {
+		$sql = "SELECT * FROM `komen_users` WHERE `email` = :email AND `cms` = :cms";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':email', $email);
+		$stmt->bindValue(':cms', "1");
+		$stmt->execute();
+		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($result){
+			return $result;
+		}
+		return [];
+	}
+
 
 	public function findFullWeek() {
 		$sql = "SELECT * FROM `komen_weken` WHERE `empty` = :empty";

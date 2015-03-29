@@ -5,7 +5,7 @@
 	<meta name="author" content="Gilles Van Den Ven + Matthias Brodelet">
     <meta name="description" content="Komen_Goochelen">
     <meta name="keywords" content="devine Major IV">
-      <meta name="viewport" content="width=device-width">
+     <meta name="viewport" content="width=640, initial-scale=.5">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,800italic,300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href="css/src/screen.css" rel="stylesheet" type="text/css"/>

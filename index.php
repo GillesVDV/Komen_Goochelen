@@ -41,6 +41,23 @@ $routes = array(
         'controller' => 'Goochelen',
         'action' => 'scoredrie'
     ), 
+    'uploadimg' => array(
+        'controller' => 'Goochelen',
+        'action' => 'uploadimg'
+    ),
+    'cms' => array(
+        'controller' => 'Users',
+        'action' => 'cms'
+    ),
+    'cmss' => array(
+        'controller' => 'Users',
+        'action' => 'cmss'
+    ),
+    'cmssettings' => array(
+        'controller' => 'Goochelen',
+        'action' => 'cmssettings'
+    ),
+
 );
 
 if(empty($_GET['page'])) {

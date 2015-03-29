@@ -1,6 +1,7 @@
 var OverzichtView = require('../views/OverzichtView.js');
 var ProfielView = require('../views/ProfielView.js');
 var BeoordeelView = require('../views/BeoordeelView.js');
+var GalerijView = require('../views/GalerijView.js');
 
 var Application = Backbone.Router.extend({
 
@@ -8,9 +9,9 @@ var Application = Backbone.Router.extend({
 		"overzicht": "overzicht",
 		"profiel/:id": "profiel",
 		"beoordelen/:id": "beoordelen",
+		"galerij": "galerij",
 		"*actions": "default"
 	},
-
 
 	empty: function(){
 		$('.container').empty();
@@ -24,6 +25,12 @@ var Application = Backbone.Router.extend({
 		this.empty();
 		this.overzicht = new OverzichtView();
 		$('.container').append(this.overzicht.render().el);
+	},
+
+	galerij : function(){
+		this.empty();
+		this.galerij = new GalerijView();
+		$('.container').append(this.galerij.render().el);
 	},
 
 	profiel : function(id){

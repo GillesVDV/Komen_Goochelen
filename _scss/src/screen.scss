@@ -25,6 +25,7 @@ body{
 	text-decoration:none;
 }
 
+
 .container{
 	margin-left:0;
 	@include transition-property(margin-left);
@@ -35,7 +36,7 @@ body{
 .welcomescreen{
 	background: url('../../img/welkom.jpg');
 	width:640px;
-	height:1046px;
+	height:1136px;
 }
 
 .goochelaarsback{
@@ -325,8 +326,7 @@ body{
 	font-size:1.5em;
 }
 
-.scorekaart{
-	background:url('../../img/scorekaart.jpg') no-repeat;
+.scorekaart {
 	width:393px;
 	height:543px;
 	margin: 0 auto;
@@ -359,6 +359,18 @@ body{
 		margin-left:18px;
 		@include transform(rotate(-180deg) );
 	}
+}
+
+.schoppen{
+	background:url('../../img/scorekaart.jpg') no-repeat;
+}
+
+.ruiten{
+	background:url('../../img/kaartruiten.jpg') no-repeat;
+}
+
+.klaveren{
+	background:url('../../img/kaartklaveren.jpg') no-repeat;
 }
 
 .scoredown{
