@@ -19,24 +19,6 @@ var galerijView = Baseview.extend({
 		this.collection = new GalerijCollection();
 		this.listenTo(this.collection, 'sync', this.renderGalerij);
 		this.collection.fetch();
-
-		// $('#imageupload').submit(function(event){
-		// 	event.preventDefault();
-
-		// 	console.log('klik post');
-
-		// 	$.ajax({
-		// 	  url: 'index.php?page=uploadimg',
-		// 	  type: 'POST',
-		// 	  data: new FormData(this),
-		// 	  processData: false,
-		// 	  contentType: false,
-		// 	  cache: false,
-		// 	  success: function(data){
-			    
-		// 	  }
-		// 	});	
-		// });
 	},
 
 	renderGalerij: function(){
@@ -56,7 +38,7 @@ var galerijView = Baseview.extend({
 	render: function(){
 
 		this.$el.html(this.template());
-		this.$galerij = this.$el.find('.galerij');
+		this.$galerij = this.$el.find('.fotos');
 		return this;
 
 	},

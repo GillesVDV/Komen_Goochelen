@@ -29,21 +29,21 @@ $routes = array(
         'controller' => 'Goochelen',
         'action' => 'session'
     ), 
-    'scoreeen' => array(
+    'eerstetotaalscore' => array(
         'controller' => 'Goochelen',
-        'action' => 'scoreeen'
-    ), 
-    'scoretwee' => array(
-        'controller' => 'Goochelen',
-        'action' => 'scoretwee'
-    ), 
-    'scoredrie' => array(
-        'controller' => 'Goochelen',
-        'action' => 'scoredrie'
+        'action' => 'eerstetotaalscore'
     ), 
     'uploadimg' => array(
         'controller' => 'Goochelen',
         'action' => 'uploadimg'
+    ),
+    'scoregeplaatst' => array(
+        'controller' => 'Goochelen',
+        'action' => 'scoregeplaatst'
+    ),
+    'updatetotaalscore' => array(
+        'controller' => 'Goochelen',
+        'action' => 'updatetotaalscore'
     ),
     'cms' => array(
         'controller' => 'Users',
@@ -56,6 +56,10 @@ $routes = array(
     'cmssettings' => array(
         'controller' => 'Goochelen',
         'action' => 'cmssettings'
+    ),
+    'getwinnaar' => array(
+        'controller' => 'Goochelen',
+        'action' => 'getwinnaar'
     ),
 
 );

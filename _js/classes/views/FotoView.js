@@ -8,18 +8,13 @@ var FotoView = Backbone.View.extend({
 
 
 	events: {
-		'click .delete': 'clickDelete',
-	},
-
-	clickDelete: function(e){
-		e.preventDefault();
-
-		this.model.destroy();
 
 	},
+
+
 
 	initialize: function(){
-		this.listenTo(this.model, 'destroy', this.remove);
+
 	},
 
 	render: function(){

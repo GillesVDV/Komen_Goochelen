@@ -6,6 +6,7 @@ var beoordeler_id;
 var user_id;
 var teller = 0;
 var scorekaart = document.querySelector('.scorekaart');
+var totaalscore=0;
 
 
 var BeoordeelView = Baseview.extend({
@@ -97,12 +98,6 @@ var BeoordeelView = Baseview.extend({
 
 		console.log(teller);
 
-		$.post( "index.php?page=scoreeen", { 
-			userid: user_id,
-			beoordelerid: beoordeler_id,
-			score: teller
-		})
-		.done(function( data ) {
 
 			var intro = document.querySelector('.intro');
 			var main = document.querySelector('.main');
@@ -111,6 +106,8 @@ var BeoordeelView = Baseview.extend({
 			var getal = document.querySelector('.scorekaart p');
 			var top = document.querySelector('.top');
 			var bottom = document.querySelector('.bottom');
+
+			totaalscore += teller;
 			
 			getal.innerHTML = 0;
 			top.innerHTML = 0;
@@ -134,7 +131,6 @@ var BeoordeelView = Baseview.extend({
 
 			introb.classList.add("hidden");
 			mainb.classList.remove("hidden");
-		});
 	},
 
 	clickAddMain: function(e){
@@ -142,13 +138,6 @@ var BeoordeelView = Baseview.extend({
 		e.preventDefault();
 
 		console.log(teller);
-
-		$.post( "index.php?page=scoretwee", { 
-			userid: user_id,
-			beoordelerid: beoordeler_id,
-			score: teller
-		})
-		.done(function( data ) {
 
 			var main = document.querySelector('.main');
 			var finale = document.querySelector('.finale');
@@ -160,6 +149,8 @@ var BeoordeelView = Baseview.extend({
 			getal.innerHTML = 0;
 			top.innerHTML = 0;
 			bottom.innerHTML = 0;
+
+			totaalscore += teller;
 
 			var scorekaart = document.querySelector('.scorekaart');
 			scorekaart.classList.remove("ruiten");
@@ -178,23 +169,54 @@ var BeoordeelView = Baseview.extend({
 			finale.classList.remove("hidden");
 			mainb.classList.add("hidden");
 			finaleb.classList.remove("hidden");
-
-		});
 	},
 
 	clickAddFinale: function(e){
 
 		e.preventDefault();
+		totaalscore += teller;
 
-		$.post( "index.php?page=scoredrie", { 
-			userid: user_id,
-			beoordelerid: beoordeler_id,
-			score: teller
-		})
-		.done(function( data ) {
-			teller = 0;
-	    	Window.Application.navigate('overzicht', {trigger:true});
+		$.get('index.php?page=scoregeplaatst&userid='+user_id, function ( data ) {
+		  
+
+		    if(data[0]){
+		    	console.log('er is data');
+
+		    	var updatescore = +totaalscore + +data[0].totaalscore;
+
+		    	$.post( "index.php?page=updatetotaalscore", { 
+					updatescore: updatescore,
+					userid: user_id
+				})
+				.done(function( data ) {
+					
+					totaalscore = 0;
+					updatescore = 0;
+					teller = 0;
+			    	Window.Application.navigate('overzicht', {trigger:true});
+				});
+
+
+		    }else{
+		    	console.log('er is geen data');
+
+		    	$.post( "index.php?page=eerstetotaalscore", { 
+					userid: user_id,
+					totaalscore: totaalscore
+				})
+				.done(function( data ) {
+					
+					totaalscore = 0;
+					updatescore = 0;
+					teller = 0;
+			    	Window.Application.navigate('overzicht', {trigger:true});
+				});
+
+
+		    }
 		});
+
+		
 	},
 
 	

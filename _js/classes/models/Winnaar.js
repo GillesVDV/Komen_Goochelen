@@ -1,13 +1,15 @@
-var Goochelaar = Backbone.Model.extend({
+var Winnaar = Backbone.Model.extend({
 
 	defaults: {
 		"artiestennaam": "",
 		"email": "",
 		"dag": "",
-		"currentdag": ""
+		"currentdag": "",
+		"totaalscore": "",
+
 	},
 
-	urlRoot: 'api/overzicht',
+	urlRoot: 'api/winnaars',
 	
 	sync: function(method, model, options) {
 		if(model.methodUrl && model.methodUrl(method.toLowerCase())) {
@@ -19,4 +21,4 @@ var Goochelaar = Backbone.Model.extend({
 
 });
 
-module.exports = Goochelaar;
+module.exports = Winnaar;

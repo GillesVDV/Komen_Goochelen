@@ -27,6 +27,14 @@ private $userDAO;
 
 	}
 
+	public function getwinnaar(){
+		$winnaar= $this->goochelenDAO->getwinnaar();
+
+		header('Content-Type: application/json');
+	    echo json_encode($winnaar);
+	    die();
+	}
+
 	public function cmssettings(){
 
 		$cmssettings= $this->goochelenDAO->getcms();
@@ -36,7 +44,27 @@ private $userDAO;
 	    die();
 	}
 
-	
+
+	public function updatetotaalscore(){
+
+		$data = $_POST;
+
+		if($data){
+
+			$updatetotaalscore= $this->goochelenDAO->updatetotaalscore($data);
+		  	
+			if(!$updatetotaalscore){
+
+			}else{
+        
+				$confirm = true;
+	        
+	        header('Content-Type: application/json');
+	        echo json_encode(array('result' => true));
+	        die();
+				}
+	  	}
+	}
 
 	public function session(){
 
@@ -47,15 +75,25 @@ private $userDAO;
 	    die();
 	}
 
-	public function scoreeen(){
+	public function scoregeplaatst(){
+
+
+		$scoregeplaatst= $this->goochelenDAO->scoreGeplaatst();
+
+		header('Content-Type: application/json');
+	    echo json_encode($scoregeplaatst);
+	    die();
+	}
+
+	public function eerstetotaalscore(){
 
 		$data = $_POST;
 
 		if($data){
 
-			$scoreeen= $this->goochelenDAO->introscore($data);
+			$eerstetotaalscore= $this->goochelenDAO->eerstetotaalscore($data);
 		  	
-			if(!$scoreeen){
+			if(!$eerstetotaalscore){
 
 			}else{
         
@@ -68,51 +106,9 @@ private $userDAO;
 	  	}
 	}
 
-	public function scoretwee(){
-
-		$data = $_POST;
-
-		if($data){
-
-			$scoreeen= $this->goochelenDAO->tweescore($data);
-		  	
-			if(!$scoreeen){
-
-			}else{
-        
-				$confirm = true;
-	        
-	        header('Content-Type: application/json');
-	        echo json_encode(array('result' => true));
-	        die();
-				}
-	  	}
-	}
-
-	public function scoredrie(){
-
-		$data = $_POST;
-
-		if($data){
-
-			$scoreeen= $this->goochelenDAO->driescore($data);
-		  	
-			if(!$scoreeen){
-
-			}else{
-        
-				$confirm = true;
-	        
-	        header('Content-Type: application/json');
-	        echo json_encode(array('result' => true));
-	        die();
-				}
-	  	}
-	}
 
 	public function uploadimg(){
 
-		$this->trace('[GoochelenController]');
   		$data = $_POST;
   			
 		$name = preg_replace("/\\.[^.\\s]{3,4}$/", "", $_FILES["image"]["name"]);

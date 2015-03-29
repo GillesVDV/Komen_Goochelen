@@ -1,0 +1,27 @@
+
+
+{{#if showWinnaar}}
+<div class="grotewinnaar">
+	<div class="fotomaskgroot">
+		<img class="imggroot" src="uploads/images/{{photo}}.{{extension}}" alt="{{photo}}" />
+	</div>
+	
+	<div class="center">
+		<p class="naamwinnaar">{{email}}</p>
+
+		<p class="totaalscore">{{totaalscore}}</p>
+	</div>
+</div>
+	
+{{else}}
+
+<div class="floatwinnaars">
+
+	<div class="fotomaskklein">
+		<img class="img" src="uploads/images/{{photo}}.{{extension}}" alt="{{photo}}" />
+	</div>
+	<p class="totaalscoreklein" >{{totaalscore}}</p>
+
+</div>
+
+{{/if}}

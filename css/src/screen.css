@@ -76,6 +76,21 @@ body {
   text-decoration: none;
 }
 
+.winnaarbtn {
+  font-family: open sans;
+  border: 3px solid #e0ab5b;
+  color: #e0ab5b;
+  text-decoration: none;
+  font-size: 1.6em;
+  padding-left: 70px;
+  padding-right: 69px;
+  padding-top: 20px;
+  position: absolute;
+  margin-left: -570px;
+  margin-top: 840px;
+  padding-bottom: 20px;
+}
+
 .container {
   margin-left: 0;
   -moz-transition-property: margin-left;
@@ -146,6 +161,18 @@ body {
   margin-top: 100px;
 }
 
+.backgalerij {
+  background: url("../../img/backgalerij.jpg");
+  width: 640px;
+  height: 1136px;
+}
+.backgalerij h1 {
+  font-family: lobster;
+  color: white;
+  padding-top: 50px;
+  font-size: 2em;
+}
+
 .scoreback {
   background: url("../../img/backscores.jpg");
   width: 640px;
@@ -166,7 +193,7 @@ body {
 }
 
 .goochelaars {
-  padding-top: 70px;
+  padding-top: 20px;
   margin-left: 15px;
 }
 
@@ -291,10 +318,66 @@ body {
   margin: 0 auto;
 }
 
+.fotogalerijmask {
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  margin-left: 80px;
+  float: left;
+  margin-top: 20px;
+  border: 1px solid #E1AD59;
+}
+
+.winnaarback {
+  background: url("../../img/winnaarback.jpg");
+  width: 640px;
+  height: 1136px;
+}
+.winnaarback h1 {
+  font-family: lobster;
+  color: white;
+  padding-top: 50px;
+  font-size: 2em;
+}
+
 .img {
   width: 150px;
   height: 150px;
   overflow: hidden;
+}
+
+.imggalerij {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.naamwinnaar {
+  color: white;
+  font-family: Droid serif;
+  font-style: italic;
+  font-size: 1.5em;
+  padding-top: 20px;
+}
+
+.totaalscore {
+  font-family: lobster;
+  color: #E1AD59;
+  padding-top: 50px;
+  font-size: 4em;
+}
+
+.totaalscoreklein {
+  font-family: lobster;
+  color: white;
+  padding-top: 50px;
+  font-size: 1.8em;
+  margin-top: -20px;
+  margin-left: 35px;
+}
+
+.grotewinnaar {
+  margin-top: 150px;
 }
 
 .fotomaskgroot {
@@ -305,6 +388,22 @@ body {
   border-radius: 80px / 80px;
   overflow: auto;
   margin: 0 auto;
+}
+
+.fotomaskklein {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 80px / 80px;
+  -webkit-border-radius: 80px 80px;
+  border-radius: 80px / 80px;
+  overflow: auto;
+  margin-right: 50px;
+}
+
+.floatwinnaars {
+  float: left;
+  margin-left: 60px;
+  margin-top: 190px;
 }
 
 .imggroot {

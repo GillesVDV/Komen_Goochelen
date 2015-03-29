@@ -1,14 +1,13 @@
-var Goochelaar = Backbone.Model.extend({
+var Winnaar = require('../models/Winnaar.js');
 
-	defaults: {
-		"artiestennaam": "",
-		"email": "",
-		"dag": "",
-		"currentdag": ""
-	},
+var WinnaarsCollection = Backbone.Collection.extend({
 
-	urlRoot: 'api/overzicht',
-	
+	model: Winnaar,
+	url: 'api/winnaars',
+
+	//sorteren van tweets, .sort oproepen voor je je tweets rendert
+
+
 	sync: function(method, model, options) {
 		if(model.methodUrl && model.methodUrl(method.toLowerCase())) {
 			options = options || {};
@@ -19,4 +18,4 @@ var Goochelaar = Backbone.Model.extend({
 
 });
 
-module.exports = Goochelaar;
+module.exports = WinnaarsCollection;

@@ -1,4 +1,6 @@
 var template = require('../../../_hbs/goochelaar.hbs');
+var currentdag;
+var eindeweek;
 
 var GoochelaarView = Backbone.View.extend({
 
@@ -11,15 +13,9 @@ var GoochelaarView = Backbone.View.extend({
 		'click .delete': 'clickDelete',
 	},
 
-	clickDelete: function(e){
-		e.preventDefault();
-
-		this.model.destroy();
-
-	},
 
 	initialize: function(){
-		this.listenTo(this.model, 'destroy', this.remove);
+
 	},
 
 	render: function(){

@@ -3,8 +3,8 @@ var GoochelaarView = require('./GoochelaarView.js');
 
 var Baseview = require('./Baseview.js');
 var template = require('../../../_hbs/overview.hbs');
-var currentdag;
-var eindeweek;
+var showbtn;
+
 
 var Overzichtiew = Baseview.extend({
 
@@ -23,23 +23,43 @@ var Overzichtiew = Baseview.extend({
 		});
 
 		$.get('index.php?page=cmssettings', function ( data ) {
-		    currentdag = data[0].currentdag;
-		    eindeweek = data[0].eindeweek;
-		    console.log(currentdag + "" + eindeweek);
-		});
+		    self.currentdag = data[0].currentdag;
+		    showbtn = data[0].eindeweek;
 
+		    if(showbtn == 1){
+	    		console.log('de week is beindigd');
+
+		    }else{
+		    	console.log('week is bezig');
+		    	document.querySelector('.winnaarbtn').style.display= 'none';
+
+		    }
+
+		});	
+		
 	},
 
 	renderGoochelaars: function(){
+		var self = this;
 		this.$goochelaars.empty();
-		this.collection.forEach(this.renderGoochelaar, this);
+		$.get('index.php?page=cmssettings', function ( data ) {
+		    self.currentdag = data[0].currentdag;
+		    self.eindeweek = data[0].eindeweek;
+			
+			self.collection.forEach(self.renderGoochelaar, self);
+
+		});	
 	},
 
 	renderGoochelaar: function(model){
+	    if (model.get('dag') == this.currentdag) {
+	    	model.set({showButton : true});
+	    }
 
 		var view = new GoochelaarView({
 			model: model
 		});
+
 		this.$goochelaars.append(view.render().el);
 	},
 
@@ -48,6 +68,7 @@ var Overzichtiew = Baseview.extend({
 
 		this.$el.html(this.template());
 		this.$goochelaars = this.$el.find('.goochelaars');
+
 		return this;
 
 	},
