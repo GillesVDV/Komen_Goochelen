@@ -11,9 +11,9 @@ require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'Slim'. DIRECTORY_SEPARATOR .
 
 $app = new \Slim\Slim();
 
-require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'overzicht.php';
-require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'galerij.php';
-require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'winnaars.php';
+require_once WWW_ROOT. "api/routes" .DIRECTORY_SEPARATOR. 'overzicht.php';
+require_once WWW_ROOT. "api/routes" .DIRECTORY_SEPARATOR. 'galerij.php';
+require_once WWW_ROOT. "api/routes" .DIRECTORY_SEPARATOR. 'winnaars.php';
 
 $app->run();
 

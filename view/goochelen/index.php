@@ -18,9 +18,12 @@
 			<a class="menulink infoicon" href="#info">info</a>
 			<a class="menulink profielicon" href="#profiel/<?php  echo $session['id'] ?>">profiel</a>
 			<a class="menulink galerijicon" href="#galerij">galerij</a>
+			<div class="centerlogout">
+			<a class="menulink logout" href="index.php?page=logout">logout</a>
+			</div>
 		</div>
 
-		<a href="index.php?page=logout">logout</a>
+		
 	</div>
 	
 </div>

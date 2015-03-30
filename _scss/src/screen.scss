@@ -14,6 +14,574 @@ body{
 	line-height:1.9em;
 }
 
+.logout{
+	color:white;
+}
+
+.centerlogout{
+	margin-top:450px;
+}
+
+.infowelkom{
+
+	font-family: droid italic;
+	font-weight: 200;
+	color:white;
+	text-align:center;
+	width:500px;
+	margin: 0 auto;
+	padding-top:680px;
+	font-size:1.6em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.knop_login{
+
+	width: 360px;
+	margin: auto;
+
+	margin-top: 100px;
+	margin-bottom: 60px;
+
+	.login{
+
+		font-family: open sans;
+		border: 3px solid #e0ab5b;
+		color: #e0ab5b;
+		text-decoration: none;
+		font-size: 1.6em;
+		
+		padding-left: 121px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 121px;
+
+		
+
+	}
+}
+
+.knop_register{
+
+	width: 360px;
+	margin: auto;
+
+	.inschrijven{
+
+		font-family: open sans;
+		border: 3px solid #e0ab5b;
+		color: #e0ab5b;
+		text-decoration: none;
+		font-size: 1.6em;
+		
+		padding-left: 70px;
+		padding-right: 69px;
+
+		padding-top: 8px;
+		padding-bottom: 8px;
+		
+
+	}
+}
+
+
+.loginscreen{
+
+	background: url('../../img/loginscreen.jpg');
+	background-position: fixed;
+	width:640px;
+	height:1136px;
+
+	legend{
+
+		font-family: lobster;
+		font-size: 5em;
+		color:white;
+		text-align: center;
+		padding-top: 250px;
+		margin-bottom: 100px;
+
+
+	}
+	input[type = text],[type = password]{
+
+		
+		width: 450px;
+		height: 80px;
+		border: none;
+		background-color: #6984af;
+		opacity: 0.3;
+		margin-left: 50px;
+		margin-bottom: 40px;
+
+		padding-left: 90px;
+		color:white;
+
+		font-family: helvetica Neue;
+		text-decoration: none;
+		font-size: 1.8em;
+
+
+
+	}
+	
+	.submit{
+
+		font-family: open sans;
+		border: 3px solid #e0ab5b;
+		color: #e0ab5b;
+		text-decoration: none;
+		font-size: 1.6em;
+		background-color: transparent;
+		
+		padding-left: 121px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 121px;
+
+		margin-left: 141px;
+		margin-top: 40px;
+	}
+
+	h2{
+
+		color: white;
+		text-align: center;
+		font-family: droid italic;
+		margin-top: 50px;
+		margin-bottom: 40px;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+
+
+	}
+
+}
+.registercontent{
+
+	form{
+
+		background-image: url('../../img/registerscreen.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-color: #2E3B4D;
+
+	}
+
+	legend{
+
+		font-family: lobster;
+		font-size: 5em;
+		color:white;
+		text-align: center;
+		padding-top: 250px;
+		margin-bottom: 100px;
+
+
+	}
+	input[type = text],[type = password]{
+
+		
+		width: 450px;
+		height: 80px;
+		border: none;
+		background-color: #6984af;
+		opacity: 0.3;
+		margin-left: 50px;
+		margin-bottom: 40px;
+
+		padding-left: 90px;
+		color:white;
+
+		font-family: helvetica Neue;
+		text-decoration: none;
+		font-size: 1.8em;
+
+
+
+	}
+	
+	.submit{
+
+		font-family: open sans;
+		border: 3px solid #e0ab5b;
+		color: #e0ab5b;
+		text-decoration: none;
+		font-size: 1.6em;
+		background-color: transparent;
+		
+		padding-left: 121px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 121px;
+
+		margin-left: 141px;
+		margin-top: 40px;
+		margin-bottom: 50px;
+	}
+
+	h2{
+
+		color: white;
+		text-align: center;
+		font-family: droid italic;
+		margin-top: 50px;
+		margin-bottom: 40px;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+
+
+
+	}
+
+
+}
+
+.artistenaam{
+
+		background: url('../../img/icon-persoon.png') no-repeat left center;
+
+}
+
+.wachtwoord{
+
+		background: url('../../img/icon-password.png') no-repeat left center;
+
+}
+
+.fotoupload{
+
+		text-align: center;
+
+		#foto-icon{
+
+			width: 99px;
+			height: 77px;
+			margin-left: 270px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+			background: url('../../img/icon-foto.png');
+
+
+		}
+		input{
+
+			color: white;
+			font-family: helvetica Neue; 
+
+		}
+
+}
+
+.gemeente{
+
+		background: url('../../img/icon-gemeente.png') no-repeat left center;
+
+}
+
+.straat{
+
+		background: url('../../img/icon-straat.png') no-repeat left center;
+
+}
+
+.nummer{
+
+		background: url('../../img/icon-nummer.png') no-repeat left center;
+
+}
+
+.postcode{
+
+		background: url('../../img/icon-postcode.png') no-repeat left center;
+
+}
+
+.programma{
+
+	width: 540px;
+	margin-left: 51px;
+
+	label{
+
+		color: white;
+		text-align: center;
+		font-family: droid italic;
+		margin-top: 50px;
+		margin-bottom: 40px;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+
+	}
+
+	textarea{
+		
+		width: 540px;
+		height: 125px;
+		border: none;
+		background-color: #6984af;
+		opacity: 0.3;
+
+		font-size: 1.8em;
+		margin-bottom: 20px;
+
+	}
+
+	.intro{
+
+		background: url('../../img/style-intro.png') no-repeat center;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}
+
+	.main{
+
+		background: url('../../img/style-main.png') no-repeat center;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}
+
+	.finale{
+
+		background: url('../../img/style-finale.png') no-repeat center;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}
+
+
+
+}
+.sub-programma{
+
+	background: url('../../img/subprogramma.png') no-repeat center;
+
+}
+.sub-gegevens{
+
+	background: url('../../img/subgegevens.png') no-repeat center;
+
+}
+
+.profiel{
+
+	background: url('../../img/loginscreen.jpg');
+	background-position: fixed;
+	width:640px;
+	height:1136px;
+
+
+
+	h1{
+
+		font-family:lobster;
+		color:white;
+		padding-top:50px;
+		font-size:2em;
+		
+
+	}
+
+	
+
+}
+.profielcont{
+
+	width:200px;
+	margin:0 auto;
+	margin-top:30px;
+
+	.fotomask_profiel{
+
+		width:150px;
+		height:150px;
+		@include border-radius(150px, 150px);
+		overflow:auto;
+		border: 3px solid #d4a857;
+		
+
+		.img{
+			
+			width:150px;
+			height:150px;
+			overflow:hidden;
+		}		
+
+	}
+
+}
+.adrescont{
+
+	width: 530px;
+	margin: 0 auto;
+
+
+	.naamicon{
+		background: url('../../img/naamicon.png') center;
+		background-position: 100px;
+		background-repeat: no-repeat;
+
+		text-align: center;
+		margin-bottom: 20px;
+		
+		margin-top: 20px;
+
+	
+		font-family: droid serif;
+		font-size: 1.3em;
+		color: white;
+	
+	}
+
+	.plaatsicon{
+		background: url('../../img/plaatsicon.png') center left;
+		background-repeat: no-repeat;
+		padding-left: 55px;
+
+		width: 270px;
+
+		float: left;
+
+
+		font-family: droid serif;
+		font-size: 1.3em;
+		color: white;
+	}
+
+	.postcodeicon{
+		background: url('../../img/iconpostcode.png') center ;
+		background-position: 0px;
+		background-repeat: no-repeat;
+		padding-left: 50px;
+
+		width: 150px;
+
+		float: left;
+
+		font-family: droid serif;
+		font-size: 1.3em;
+		color: white;
+	}
+
+	.floatnon{
+
+		clear: both;
+		float: none;
+
+	}
+
+	.straaticon{
+		background: url('../../img/iconstraat.png') center ;
+		background-position: -5px;
+		background-repeat: no-repeat;
+		padding-left: 50px;
+
+		float: left;
+		width: 280px;
+
+		font-family: droid serif;
+		font-size: 1.3em;
+		color: white;
+	}
+
+	.nummericon{
+		background: url('../../img/iconnummer.png') center ;
+		background-position: -5px;
+		background-repeat: no-repeat;
+		padding-left: 50px;
+
+		float: left;
+		width: 150px;
+
+		font-family: droid serif;
+		font-size: 1.3em;
+		color: white;
+	}
+
+
+}
+
+.profiel-programma{
+
+
+
+
+		color: white;
+		text-align: center;
+		font-family: droid italic;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+
+	
+	.sub-programma{
+
+		background: url('../../img/subprogramma.png') no-repeat center;
+		margin-bottom: 20px;
+
+	}
+
+
+	.intro{
+
+		background: url('../../img/style-intro.png') no-repeat center;
+		margin-bottom: 10px;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}
+
+	.main{
+
+		background: url('../../img/style-main.png') no-repeat center;
+		margin-bottom: 10px;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}
+
+	.finale{
+
+		background: url('../../img/style-finale.png') no-repeat center;
+		margin-bottom: 10px;
+		
+		padding-left: 100px;
+		padding-right: 100px;
+		margin-left: 50px;
+
+	}	
+
+	p{
+
+		width: 540px;
+		height: 125px;
+		margin: 0 auto;
+		background:rgba(105,132,175,0.3);
+		text-align: left;
+		padding-left: 10px;
+
+
+
+	}
+
+
+
+
+}
+
 .btn{
 	padding-top:4px;
 	padding-bottom:4px;
@@ -414,16 +982,16 @@ body{
 	position: absolute;
 }
 
-.infowelkom{
-	font-family: bookman oldstyle;
-	font-weight: 700;
-	color:white;
-	text-align:center;
-	width:400px;
-	margin: 0 auto;
-	padding-top:600px;
-	font-size:1.5em;
-}
+// .infowelkom{
+// 	font-family: bookman oldstyle;
+// 	font-weight: 700;
+// 	color:white;
+// 	text-align:center;
+// 	width:400px;
+// 	margin: 0 auto;
+// 	padding-top:600px;
+// 	font-size:1.5em;
+// }
 
 .scorekaart {
 	width:393px;

@@ -134,6 +134,32 @@ class UsersController extends Controller {
 			}
 		}
 
+		if(empty($_POST['registerPlaats'])) {
+			$errors['registerPlaats'] = 'Please enter a location';
+		}
+
+		if(empty($_POST['registerStraat'])) {
+			$errors['registerStraat'] = 'Please enter a streetname';
+		}
+
+		if(empty($_POST['registerHuisnr'])) {
+			$errors['registerHuisnr'] = 'Please enter a nummer';
+		}
+
+		if(empty($_POST['registerPostcode'])) {
+			$errors['registerPostcode'] = 'Please enter a postcode';
+		}
+
+		if(empty($_POST['registerIntro'])) {
+			$errors['registerIntro'] = 'Please enter a intro';
+		}
+		if(empty($_POST['registerMain'])) {
+			$errors['registerMain'] = 'Please enter a main';
+		}
+		if(empty($_POST['registerFinale'])) {
+			$errors['registerFinale'] = 'Please enter a finale';
+		}
+
 		if(empty($errors)) {
 
 			$name = preg_replace("/\\.[^.\\s]{3,4}$/", "", $_FILES["image"]["name"]);
@@ -150,6 +176,13 @@ class UsersController extends Controller {
 				'email' => $_POST['registerEmail'],
 				'password' => $hasher->hashPassword($_POST['registerPassword']),
 				'photo'=>$name,
+				'plaats' => $_POST['registerPlaats'],
+				'straat' => $_POST['registerStraat'],
+				'huisnr' => $_POST['registerHuisnr'],
+				'postcode' => $_POST['registerPostcode'],
+				'intro' => $_POST['registerIntro'],
+				'main' => $_POST['registerMain'],
+				'finale' => $_POST['registerFinale'],
 				'extension'=>$extension
 			));
 

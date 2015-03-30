@@ -29,11 +29,18 @@ class UserDAO extends DAO {
 	public function insert($data) {
 		$errors = $this->getValidationErrors($data);
 		if(empty($errors)) {
-			$sql = "INSERT INTO `komen_users` (`email`, `password`, `photo`, `extension`) VALUES (:email, :password, :photo, :extension)";
+			$sql = "INSERT INTO `komen_users` (`email`, `password`, `photo`,`plaats`,`straat`,`huisnr`,`postcode`,`intro`,`main`,`finale`, `extension`) VALUES (:email, :password, :photo, :plaats, :straat, :huisnr, :postcode, :intro, :main, :finale, :extension)";
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->bindValue(':email', $data['email']);
 			$stmt->bindValue(':password', $data['password']);
 			$stmt->bindValue(':photo', $data['photo']);
+			$stmt->bindValue(':plaats', $data['plaats']);
+			$stmt->bindValue(':straat', $data['straat']);
+			$stmt->bindValue(':huisnr', $data['huisnr']);
+			$stmt->bindValue(':postcode', $data['postcode']);
+			$stmt->bindValue(':intro', $data['intro']);
+			$stmt->bindValue(':main', $data['main']);
+			$stmt->bindValue(':finale', $data['finale']);
 			$stmt->bindValue(':extension', $data['extension']);
 			if($stmt->execute()) {
 				$insertedId = $this->pdo->lastInsertId();
@@ -41,7 +48,7 @@ class UserDAO extends DAO {
 			}
 		}
 		return false;
-	}
+	}	
 
 	public function createNewWeek($data) {
 			$sql = "INSERT INTO `komen_weken` (`maandag`, `empty`) VALUES (:maandag, :empty)";

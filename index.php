@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 define('DS', DIRECTORY_SEPARATOR);
 define('WWW_ROOT', __DIR__ . DS);
 
@@ -67,6 +70,12 @@ $routes = array(
 if(empty($_GET['page'])) {
     $_GET['page'] = 'home';
 }
+
+// if(empty($_SESSION['user'])){
+//     header('Location: index.php?page=welcome');
+//     exit();
+// }
+
 if(empty($routes[$_GET['page']])) {
     header('Location: index.php');
     exit();
